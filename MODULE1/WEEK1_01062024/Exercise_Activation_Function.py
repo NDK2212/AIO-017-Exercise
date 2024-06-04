@@ -5,19 +5,23 @@ def is_number(n):
     except ValueError:
         return False
     return True
+
 def sigmoid(n):
     return 1/(1+exp(-n)) # exp(n) == e**n
+
 def relu(n):
     if n>0:
         return n
     else:
         return 0
+    
 def elu(n):
     a = 0.01
     if n > 0:
         return n
     else:
-        return a * (exp(x) - 1)
+        return a * (exp(n) - 1)
+
 if __name__ == "__main__":
     x = input("Input x = ")
     if not is_number(x):
