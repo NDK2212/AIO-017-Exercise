@@ -3,7 +3,7 @@ if __name__ == "__main__":
     target = input("Enter your target string:")
     source_size = len(source)
     target_size = len(target)
-    matrix = [[0 for num in range(0, target_size + 1)]
+    matrix = [[0 for _ in range(0, target_size + 1)]
               for _ in range(0, source_size + 1)]
     for i in range(0, target_size+1):
         matrix[0][i] = i
