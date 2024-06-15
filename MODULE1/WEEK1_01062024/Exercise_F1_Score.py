@@ -14,7 +14,7 @@ def classification_model_evaluation(tp,fp,fn):
     print(f"f1-score is {F1_Score}")
     
 if __name__ == "__main__":
-    classification_model_evaluation(tp=-10,fp=4,fn=5)
+    classification_model_evaluation(tp=2,fp=4,fn=5)
 # this source code requires the input being entered right into the code (as the exercise tells me to)
 # if input from user is required => use input() function and check the data type using try and except  
     
