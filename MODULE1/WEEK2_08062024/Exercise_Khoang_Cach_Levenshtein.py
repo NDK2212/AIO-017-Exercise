@@ -11,7 +11,7 @@ if __name__ == "__main__":
         matrix[i][0] = i
     for i in range(1, source_size+1):
         for j in range(1, target_size+1):
-            sub_cost = 1 if source[i-1] != target[j-1] else 0
+            sub_cost = 0 if source[i-1] == target[j-1] else 1
             matrix[i][j] = min(matrix[i-1][j] + 1, matrix[i]
                                [j-1]+1, matrix[i-1][j-1] + sub_cost)
     print(matrix[source_size][target_size])
