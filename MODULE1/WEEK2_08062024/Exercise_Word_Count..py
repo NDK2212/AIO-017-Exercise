@@ -18,4 +18,4 @@ def word_count(file_path):
 
 
 if __name__ == "__main__":
-    word_count('WEEK2_08062024/Word_Count_data.txt')
+    word_count("WEEK2_08062024\Word_Count_data.txt")
