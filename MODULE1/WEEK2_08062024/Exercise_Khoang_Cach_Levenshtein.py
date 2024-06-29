@@ -1,6 +1,6 @@
 if __name__ == "__main__":
-    source = input("Enter your source string:")
-    target = input("Enter your target string:")
+    source = input("Enter your source:")
+    target = input("Enter your target:")
     source_size = len(source)
     target_size = len(target)
     matrix = [[0 for _ in range(0, target_size + 1)]
