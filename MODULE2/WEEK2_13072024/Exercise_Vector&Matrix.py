@@ -59,6 +59,6 @@ if __name__ == "__main__":
         f"d) The multiplication of matrix and matrix: {matrix_multi_matrix(matrix_d1,matrix_d2)}")
 
     # e: ma tran nghich dao
-    matrix_e = np.array([[-2, 6],
-                         [8, -4]])
+    matrix_e = np.array([[1, 2],
+                         [3, 4]])
     inverse_matrix(matrix_e)
