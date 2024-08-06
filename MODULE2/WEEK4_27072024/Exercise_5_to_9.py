@@ -37,11 +37,11 @@ print(f"Correlation between TV and Radio: {round(corr_xy, 2)}")
 # Question 6
 features = ['TV', 'Radio', 'Newspaper']
 
-for feature_1 in features:
-    for feature_2 in features:
-        correlation_value = correlation(data[feature_1], data[feature_2])
+for feature1 in features:
+    for feature2 in features:
+        correlation_value = correlation(data[feature1], data[feature2])
         print(
-            f"Correlation between {feature_1} and {feature_2}: {round(correlation_value, 2)}")
+            f"Correlation between {feature1} and {feature2}: {round(correlation_value, 2)}")
 
 # Question 7
 x = data['Radio']
