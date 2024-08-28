@@ -11,6 +11,6 @@ def compute_cosine(v1, v2):
 
 
 if __name__ == "__main__":
-    vector_x = np.array([1, 2, 3,])
-    vector_y = np.array([4, 5, 6])
+    vector_x = np.array([1, 0, 1])
+    vector_y = np.array([1, 1, 0])
     print(compute_cosine(vector_x, vector_y))
