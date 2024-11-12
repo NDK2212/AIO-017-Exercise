@@ -156,7 +156,7 @@ visualize_loss(losses_list)
 
 
 def visualize_predict_gt():
-    # visualization of ground truth and predict value
+    # visualization  of ground truth and predict value
     sorted_population = sorted(new_population, key=compute_fitness)
     print(sorted_population[-1])
     theta = np.array(sorted_population[-1])
