@@ -12,7 +12,7 @@ df = pd.read_csv(
 )
 df.info()
 df.describe()
-# **3. Add bias term**
+# **3.Add bias term**
 dataset_arr = df.to_numpy()
 X = dataset_arr[:, :-1].astype(np.float64)
 y = dataset_arr[:, -1].astype(np.float64)
