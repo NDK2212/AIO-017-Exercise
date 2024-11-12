@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 # **2. Read dataset**
+# do không đủ space để tải file credit card lên nên nếu muốn chạy thì hãy tải credit_card.csv vào folder hiện tại nhé
 dataset_path = 'MODULE5\WEEK2_09112024\creditcard.csv'
 df = pd.read_csv(
     dataset_path
