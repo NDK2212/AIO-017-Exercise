@@ -6,12 +6,12 @@ import random
 random.seed(0)
 
 
-def load_data_from_file(file_name='/content/drive/MyDrive/AIO2024-017/MODULE 4/advertising (1).csv'):
+def load_data_from_file(file_name='MODULE4\WEEK2_05102024\Advertising copy.csv'):
     data = np.genfromtxt(file_name, dtype=None, delimiter=',', skip_header=1)
-    features_X = data[:, :3]
+    features_x = data[:, :3]
     sales_y = data[:, 3]
-    features_X = np.c_[np.ones((data.shape[0], 1)), features_X]
-    return features_X, sales_y
+    features_x = np.c_[np.ones((data.shape[0], 1)), features_x]
+    return features_x, sales_y
 
 
 X_features, sales_y = load_data_from_file()
@@ -19,7 +19,7 @@ X_features, sales_y = load_data_from_file()
 
 def create_individual(n=4, bound=10):
     individual = []
-    for i in range(n):
+    for _ in range(n):
         individual.append((random.random()*2-1)*bound/2)
     return individual
 
@@ -68,7 +68,7 @@ def mutate(individual, mutation_rate=0.05, bound=10):
     return individual_m
 
 
-def initializePopulation(m):
+def initialize_population(m):
     population = [create_individual() for _ in range(m)]
     return population
 
@@ -111,7 +111,7 @@ print(sales_y)
 individual = create_individual()
 print(individual)
 individual = [4.09, 4.82, 3.10, 4.02]
-fitness_score = compute_fitness(individual, X_features, sales_y)
+fitness_score = compute_fitness(individual)
 print(fitness_score)
 individual1 = [4.09, 4.82, 3.10, 4.02]
 individual2 = [3.44, 2.57, -0.79, -2.41]
@@ -121,7 +121,7 @@ print(individual2)
 before_individual = [4.09, 4.82, 3.10, 4.02]
 after_individual = mutate(individual, mutation_rate=2.0)
 print(before_individual == after_individual)
-population = initializePopulation(100)
+population = initialize_population(100)
 print(len(population))
 individual1 = [4.09, 4.82, 3.10, 4.02]
 individual2 = [3.44, 2.57, -0.79, -2.41]
@@ -129,19 +129,19 @@ old_population = [individual1, individual2]
 new_population, _ = create_new_population(old_population, elitism=2, gen=1)
 
 
-def run_GA():
+def run_ga():
     n_generations = 100
     m = 600
-    features_X, sales_Y = load_data_from_file()
-    population = initializePopulation(m)
+    _, _ = load_data_from_file()
+    population = initialize_population(m)
     losses_list = []
-    for i in range(n_generations):
+    for _ in range(n_generations):
         population, loss = create_new_population(population, elitism=2, gen=1)
         losses_list.append(loss)
     return losses_list
 
 
-losses_list = run_GA()
+losses_list = run_ga()
 
 
 def visualize_loss(losses_list):
@@ -151,7 +151,7 @@ def visualize_loss(losses_list):
     plt.show()
 
 
-losses_list = run_GA()
+losses_list = run_ga()
 visualize_loss(losses_list)
 
 
@@ -165,7 +165,7 @@ def visualize_predict_gt():
     for feature in X_features:
         estimated_prices.append(feature@theta)
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    _, _ = plt.subplots(figsize=(10, 6))
     plt.xlabel('Samples')
     plt.ylabel('Price')
     plt.plot(sales_y, c='green', label='Real Prices')
